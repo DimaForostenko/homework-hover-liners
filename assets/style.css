@@ -1,0 +1,118 @@
+/* h1::first-letter,
+h1:hover{
+  cursor:pointer;
+}
+p::first-line{
+  background-color:yellowgreen;
+}
+p::first-letter{
+color: red;
+font-size: 3em;
+} 
+p::selection{
+  background-color:aqua;
+  color:blanchedalmond;
+} */
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  height: 300vh;
+  
+}
+h1::before,
+h1::after
+{
+content: 'logo';
+display: inline;
+}
+.page-header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color:aquamarine;
+  -webkit-box-shadow: 0px 3px 3px 0px #b5b5b5;
+  box-shadow: 0px 3px 3px 0px #b5b5b5;
+  
+}
+.list{
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+}
+.list-item{
+  position: relative;
+  box-sizing:none;
+  margin: 5px;
+  display: inline-block;
+  background-color:azure;
+  color: sandybrown;
+  
+}
+.list-item::before,
+.list-item::after{
+  text-align: left;
+  margin-bottom: -2px;
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: red;
+  transition-property: width;
+  transition-duration: 0.3s;
+}
+.list-item:hover::before,
+.list-item:hover::after  {
+  
+  width: 100%;
+}
+.list-item::before{
+  position: absolute;
+  right: 0%;
+  margin-top: -2px;
+  background-color:green;
+  transition-duration: 0.5s;
+}
+
+
+.link{
+  width: 70px;
+  display: inline-block;
+  padding: 1em;
+  color: inherit;
+  text-decoration: none;
+  
+}
+
+/* .link::after{
+  margin-left: 100%;  */
+
+
+main {
+  padding-top: 4em;
+}
+.inner{
+  height: 50px;
+  width: 10%;
+  background-color:blue;
+  transition-property: width;
+  transition-duration: 1s;
+}
+.wrapper:hover .inner {
+  width: 100%;
+}
+.linear{
+  transition-timing-function: linear;
+}
+.ease-in{
+  transition-timing-function: ease-in;
+}
+.ease-out{
+  transition-timing-function: ease-out;
+}
+.ease-in-out{
+  transition-timing-function: ease-in-out;
+}
